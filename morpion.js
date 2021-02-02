@@ -11,15 +11,17 @@ function initialisation() {
 
 document.addEventListener("DOMContentLoaded", function() 
 { 
-	console.log("Le document est pret");
-	var joueur="X";
+    var joueur="X";
+    var i = 9;
 	document.getElementById('morpion').addEventListener("mousedown", function(e) 
 	{
-		console.log("Le bouton de la souris a été enfoncé.");
 		var td=e.target;
 		if(td.textContent!==''){return;}
 		td.textContent=joueur;
-		joueur=(joueur==="X" ? 'O' : 'X');
+        joueur=(joueur==="X" ? 'O' : 'X');
+        morpion[i] = joueur;
+        console.log(morpion[i]);
+        i--;
 	});
 
 });
